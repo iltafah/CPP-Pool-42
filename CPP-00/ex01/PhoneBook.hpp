@@ -6,7 +6,7 @@
 /*   By: iltafah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 14:34:53 by iltafah           #+#    #+#             */
-/*   Updated: 2021/10/26 21:40:52 by iltafah          ###   ########.fr       */
+/*   Updated: 2021/10/27 18:47:51 by iltafah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class PhoneBook
 	public:
 		PhoneBook();
 		void	executeCommand(std::string command);
-		~PhoneBook();
+		// ~PhoneBook();
 };
 
 #endif

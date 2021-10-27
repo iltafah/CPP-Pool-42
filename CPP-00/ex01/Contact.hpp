@@ -6,7 +6,7 @@
 /*   By: iltafah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 19:07:50 by iltafah           #+#    #+#             */
-/*   Updated: 2021/10/26 20:10:18 by iltafah          ###   ########.fr       */
+/*   Updated: 2021/10/27 16:15:25 by iltafah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CONTACT_HPP
 
 # include <iostream>
+# include <string>
 # include <iomanip>
 
 class Contact
@@ -26,7 +27,7 @@ class Contact
 		std::string	darkest_secret;
 
 	public:
-		Contact();
+		// Contact();
 		void setFirstName(std::string first_name);
 		void setLastName(std::string last_name);
 		void setNickName(std::string nick_name);
@@ -37,7 +38,7 @@ class Contact
 		std::string getNickName(void) const;
 		std::string getPhoneNumber(void) const;
 		std::string getDarkestSecret(void) const;
-		~Contact();
+		// ~Contact();
 };
 
 typedef void (Contact::*Contact_members_ptr)(std::string data);

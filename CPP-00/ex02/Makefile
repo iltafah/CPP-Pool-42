@@ -6,7 +6,7 @@
 #    By: iltafah <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/25 13:10:46 by iltafah           #+#    #+#              #
-#    Updated: 2021/10/27 14:24:32 by iltafah          ###   ########.fr        #
+#    Updated: 2021/10/25 14:30:40 by iltafah          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ OBJ = $(SRC:%.cpp=%.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	clang++ $(FLAGS) -o $(NAME) $^ -std=c++98
+	clang++ $(FLAGS) -o $(NAME) $^
 
 %.o: %.c
 	clang++ -c $< -o $@
