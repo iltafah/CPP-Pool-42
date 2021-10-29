@@ -6,17 +6,23 @@
 /*   By: iltafah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 14:34:20 by iltafah           #+#    #+#             */
-/*   Updated: 2021/10/27 20:26:21 by iltafah          ###   ########.fr       */
+/*   Updated: 2021/10/29 17:58:24 by iltafah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./PhoneBook.hpp"
 
+/*
+** ************************************************************************** **
+								addNewContactData()									
+** ************************************************************************** **
+*/
+
 void	addNewContactData(Contact &currContact)
 {
 	int						i = 0;
 	std::string				data;
-	const char				prompt[5][50] = {
+	std::string				prompt[5] = {
 		"⦿ Enter Contact First Name: ",
 		"⦿ Enter Contact Last Name: ",
 		"⦿ Enter Contact Nick Name: ",
@@ -38,27 +44,15 @@ void	addNewContactData(Contact &currContact)
 		if (std::cin.eof())
 			break ;
 		CALL_MEMBER_FN(currContact, memberFunction[i++])(data);
+		currContact.setMaxStringLength(data.length());
 	}
 }
 
-// void	printDataCase(std::string given_data)
-// {
-// 	int		index, len;
-
-// 	index = 0;
-// 	len = (int)given_data.length();
-// 	if (len > 10)
-// 	{
-// 		while (index < 9)
-// 		{
-// 			std::cout << given_data[index];
-// 			index++;
-// 		}
-// 		std::cout << '.';
-// 	}
-// 	else
-// 		std::cout << std::setw(10) << given_data;
-// }
+/*
+** ************************************************************************** **
+							displayContactsTable()										
+** ************************************************************************** **
+*/
 
 std::string	truncateData(std::string data)
 {
@@ -107,13 +101,45 @@ void	displayContactsTable(Contact contacts[CONTACTS_SIZE], int filled_size)
 	return ;
 }
 
+/*
+** ************************************************************************** **
+								searchForContact()																		
+** ************************************************************************** **
+*/
+
 void	printFullContactData(Contact givenContact)
 {
-	std::cout << "First Name: " << givenContact.getFirstName() << std::endl;
-	std::cout << "Last Name: " << givenContact.getLastName() << std::endl;
-	std::cout << "Nick Name: " << givenContact.getNickName() << std::endl;
-	std::cout << "Phone Number: " << givenContact.getPhoneNumber() << std::endl;
-	std::cout << "Darkest Secret: " << givenContact.getDarkestSecret() << std::endl;
+	int	totalLen;
+	int	maxDataLen;
+	int	printedLen;
+	int	maxIndicLen;
+	int	spacesNum;
+	std::string	indicators[5] = {
+		". First Name: ",
+		". Last Name: ",
+		". Nick Name: ",
+		". Phone Number: ",
+		". Darkest Secret: "
+	};
+	std::string contactData[5] = {
+		givenContact.getFirstName(),
+		givenContact.getLastName(),
+		givenContact.getNickName(),
+		givenContact.getPhoneNumber(),
+		givenContact.getDarkestSecret()
+	};
+
+	maxIndicLen = indicators[4].length();
+	maxDataLen = givenContact.getMaxStringLength();
+	totalLen = maxDataLen + maxIndicLen;
+	std::cout << std::string(givenContact.getMaxStringLength() + maxIndicLen, '.') << std::endl;
+	for (int i = 0; i < 5; i++)
+	{
+		printedLen = contactData[i].length() + indicators[i].length();
+		spacesNum = totalLen - printedLen;
+		std::cout << indicators[i] << contactData[i] << std::setw(spacesNum) << '.' << std::endl;
+	}
+	std::cout << std::string(givenContact.getMaxStringLength() + maxIndicLen, '.') << std::endl;
 }
 
 void	searchForContact(Contact contacts[CONTACTS_SIZE], int filled_size)
@@ -130,12 +156,18 @@ void	searchForContact(Contact contacts[CONTACTS_SIZE], int filled_size)
 		if (data.size() == 1 && contactIndex >= 0 && contactIndex < filled_size)
 			printFullContactData(contacts[contactIndex]);
 		else
-			std::cout << "Wrong index, please enter index from [1 - " << filled_size << "]";
+			std::cout << "Wrong index, please enter index from [1 - " << filled_size << "]\n";
 	}
 	else if (filled_size == 0)
 		std::cout << "PhoneBook is empty, please add a new contact" << std::endl;
 	return ;
 }
+
+/*
+** ************************************************************************** **
+							PhoneBook::executeCommand()																		
+** ************************************************************************** **
+*/
 
 void	PhoneBook::executeCommand(std::string command)
 {
@@ -164,9 +196,10 @@ void	PhoneBook::executeCommand(std::string command)
 	return ;
 }
 
-PhoneBook::PhoneBook(void)
-{
-	this->curr_contact_index = 0;
-	this->filled_size = 0;
-	return ;
-}
+/*
+** ************************************************************************** **
+							PhoneBook::PhoneBook																		
+** ************************************************************************** **
+*/
+
+PhoneBook::PhoneBook(void) : curr_contact_index(0) , filled_size(0) {}

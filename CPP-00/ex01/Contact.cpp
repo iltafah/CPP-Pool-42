@@ -6,7 +6,7 @@
 /*   By: iltafah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 19:09:01 by iltafah           #+#    #+#             */
-/*   Updated: 2021/10/26 15:31:00 by iltafah          ###   ########.fr       */
+/*   Updated: 2021/10/29 16:51:56 by iltafah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,13 @@ void	Contact::setDarkestSecret(std::string darkest_secret)
 	return ;
 }
 
+void	Contact::setMaxStringLength(size_t newLength)
+{
+	if (newLength > this->max_string_member_length)
+		this->max_string_member_length = newLength;
+	return ;
+}
+
 std::string	Contact::getFirstName(void) const
 {
 	return (this->first_name);
@@ -66,3 +73,10 @@ std::string	Contact::getDarkestSecret(void) const
 {
 	return (this->darkest_secret);
 }
+
+size_t	Contact::getMaxStringLength(void) const
+{
+	return (this->max_string_member_length);
+}
+
+Contact::Contact(void) : max_string_member_length(0) {}

@@ -6,7 +6,7 @@
 /*   By: iltafah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 19:07:50 by iltafah           #+#    #+#             */
-/*   Updated: 2021/10/27 16:15:25 by iltafah          ###   ########.fr       */
+/*   Updated: 2021/10/29 17:40:49 by iltafah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,22 @@ class Contact
 		std::string nick_name;
 		std::string	phone_number;
 		std::string	darkest_secret;
+		int			max_string_member_length;
 
 	public:
-		// Contact();
-		void setFirstName(std::string first_name);
+		Contact();
 		void setLastName(std::string last_name);
 		void setNickName(std::string nick_name);
+		void setFirstName(std::string first_name);
+		void setMaxStringLength(size_t newLength);
 		void setPhoneNumber(std::string phone_number);
 		void setDarkestSecret(std::string darkest_secret);
-		std::string getFirstName(void) const;
 		std::string getLastName(void) const;
 		std::string getNickName(void) const;
+		std::string getFirstName(void) const;
 		std::string getPhoneNumber(void) const;
 		std::string getDarkestSecret(void) const;
-		// ~Contact();
+		size_t		getMaxStringLength(void) const;
 };
 
 typedef void (Contact::*Contact_members_ptr)(std::string data);
