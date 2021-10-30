@@ -6,15 +6,16 @@
 #    By: iltafah <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/25 13:10:46 by iltafah           #+#    #+#              #
-#    Updated: 2021/10/25 14:30:40 by iltafah          ###   ########.fr        #
+#    Updated: 2021/10/30 15:28:15 by iltafah          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME = account
 
 FLAGS = -Wall -Wextra -Werror
 
-SRC = megaphone.cpp
+SRC = Account.cpp \
+tests.cpp
 
 OBJ = $(SRC:%.cpp=%.o)
 
