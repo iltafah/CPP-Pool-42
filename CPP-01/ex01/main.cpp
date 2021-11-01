@@ -6,31 +6,28 @@
 /*   By: iltafah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 11:44:50 by iltafah           #+#    #+#             */
-/*   Updated: 2021/11/01 15:09:46 by iltafah          ###   ########.fr       */
+/*   Updated: 2021/11/01 18:10:10 by iltafah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int		main()
+void	callZombiesDestructors(Zombie* zombies)
 {
 	int		i;
+	
+	i = 0;
+	while (i < 5)
+		zombies[i++].~Zombie();
+	return ;
+}
+
+int		main()
+{
 	Zombie*	zombies;
 
-	i = 0;
-	zombies = zombieHorde(5, "ilias");
-	std::cout << std::endl;
-	while (i < 5)
-	{
-		zombies[i].announce();
-		i++;
-	}
-	i = 0;
-	while (i < 5)
-	{
-		zombies[i].~Zombie();
-		i++;
-	}
-	delete &zombies[0];
+	zombies = zombieHorde(5, "Holy Semicolon");
+	callZombiesDestructors(zombies);
+	::operator delete (zombies);
 	return (0);
 }
