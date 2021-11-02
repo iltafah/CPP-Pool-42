@@ -5,30 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: iltafah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 08:30:50 by iltafah           #+#    #+#             */
-/*   Updated: 2021/11/02 08:43:08 by iltafah          ###   ########.fr       */
+/*   Created: 2021/11/02 18:03:57 by iltafah           #+#    #+#             */
+/*   Updated: 2021/11/02 18:55:58 by iltafah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "./replace.hpp"
 
-int		main()
+int		printError(std::string errorMsg)
 {
-	std::string	message("HI THIS IS BRAIN");
+	std::cout << errorMsg << std::endl;
+	return (ERROR);
+}
 
-	//Declare string PTR && REF
-	std::string	*stringPTR = &message;
-	std::string	&stringREF = message;
+int		checkErrors(int argsCount, char **args)
+{
+	if (argsCount != 3)
+		return (printError("Error: Wrong number of arguments"));
+	if (args[0][0] == '\0' || args[1][0] == '\0' || args[2][0] == '\0')
+		return (printError("Error: An empty string within arguments"));
+	return (SUCCESS);
+}
 
-	//Display addresses
-	std::cout << (void*)&message << std::endl;
-	std::cout << (void*)&stringPTR << std::endl;
-	std::cout << (void*)&stringREF << std::endl;
-
-	//Display strings
-	std::cout << message << std::endl;
-	std::cout << *stringPTR << std::endl;
-	std::cout << stringREF << std::endl;
-
+int		main(int argc, char **argv)
+{
+	if (checkErrors(argc - 1, argv + 1) == SUCCESS)
+	{
+		std::ifstream inputFile;
+		
+		inputFile.open(argv[1]);
+		
+	}
 	return (0);
 }

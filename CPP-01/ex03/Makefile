@@ -6,7 +6,7 @@
 #    By: iltafah <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/25 13:10:46 by iltafah           #+#    #+#              #
-#    Updated: 2021/11/02 08:33:40 by iltafah          ###   ########.fr        #
+#    Updated: 2021/11/02 14:44:19 by iltafah          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,10 @@ NAME = brain
 
 FLAGS = -Wall -Wextra -Werror
 
-SRC = main.cpp
+SRC = main.cpp \
+Weapon.cpp \
+HumanA.cpp \
+HumanB.cpp
 
 OBJ = $(SRC:%.cpp=%.o)
 
