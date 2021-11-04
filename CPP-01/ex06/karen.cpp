@@ -6,7 +6,7 @@
 /*   By: iltafah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 15:41:58 by iltafah           #+#    #+#             */
-/*   Updated: 2021/11/03 19:48:04 by iltafah          ###   ########.fr       */
+/*   Updated: 2021/11/04 09:47:44 by iltafah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	Karen::debug(void)
 {
 	std::cout << "I love to get ";
 	std::cout << "extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. ";
+	std::cout << std::endl;
 	std::cout << "I just love it!";
 	std::cout << std::endl;
 	return ;
@@ -23,7 +24,8 @@ void	Karen::debug(void)
 
 void	Karen::info(void)
 {
-	std::cout << "I cannot believe adding extra bacon cost more money. You don’t put enough! ";
+	std::cout << "I cannot believe adding extra bacon cost more money. You don’t put enough!";
+	std::cout << std::endl;
 	std::cout << "If you did I would not have to ask for it!";
 	std::cout << std::endl;
 	return ;
@@ -31,7 +33,7 @@ void	Karen::info(void)
 
 void	Karen::warning(void)
 {
-	std::cout << "I think I deserve to have some extra bacon for free. ";
+	std::cout << "I think I deserve to have some extra bacon for free." << std::endl;
 	std::cout << "I’ve been coming here for years and you just started working here last month.";
 	std::cout << std::endl;
 	return ;
