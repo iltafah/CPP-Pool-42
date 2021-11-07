@@ -6,7 +6,7 @@
 /*   By: iltafah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 10:33:47 by iltafah           #+#    #+#             */
-/*   Updated: 2021/11/06 18:52:56 by iltafah          ###   ########.fr       */
+/*   Updated: 2021/11/07 14:59:30 by iltafah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	Fixed::operator=(const Fixed& obj)
 
 std::ostream&	operator<<(std::ostream& os, const Fixed& obj)
 {
-	os << (float)obj.toFloat();
+	os << obj.toFloat();
 	return (os);
 }
 
@@ -69,5 +69,7 @@ int		Fixed::toInt(void) const
 
 float	Fixed::toFloat(void) const
 {
-	return (roundf(this->rawBits) / (1 << 8));
+	float	floatRawBits = roundf(this->rawBits);
+
+	return (floatRawBits / (1 << 8));
 }
