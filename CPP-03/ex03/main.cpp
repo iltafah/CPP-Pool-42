@@ -6,7 +6,7 @@
 /*   By: iltafah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 18:13:46 by iltafah           #+#    #+#             */
-/*   Updated: 2021/11/09 19:03:43 by iltafah          ###   ########.fr       */
+/*   Updated: 2021/11/11 08:38:36 by iltafah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@
 
 int		main()
 {	
-	DiamondTrap	player("Holy Semicolon");
+	DiamondTrap	player("Elias");
 
+	player.whoAmI();
 	player.attack("someone");
 	player.takeDamage(3);
 	player.beRepaired(10);
+	player.guardGate();
 	player.highFivesGuys();
 
 	return (0);

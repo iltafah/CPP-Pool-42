@@ -6,11 +6,38 @@
 /*   By: iltafah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 08:52:17 by iltafah           #+#    #+#             */
-/*   Updated: 2021/11/09 15:44:00 by iltafah          ###   ########.fr       */
+/*   Updated: 2021/11/11 17:23:05 by iltafah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
+
+ScavTrap::ScavTrap()
+{
+	std::cout << "ScavTrap default constructor has been called" << std::endl;
+	name = "NoName";
+	hitPoints = 100;
+	energyPoints = 50;
+	attackDamage = 20;
+}
+
+ScavTrap::ScavTrap(const ScavTrap& givenObj)
+{
+	std::cout << "ScavTrap copy constructor has been called" << std::endl;
+	this->name = givenObj.name;
+	this->hitPoints = givenObj.hitPoints;
+	this->energyPoints = givenObj.energyPoints;
+	this->attackDamage = givenObj.attackDamage;
+}
+
+void	ScavTrap::operator=(const ScavTrap& givenObj)
+{
+	std::cout << "ScavTrap copy assignment operator has been called" << std::endl;
+	this->name = givenObj.name;
+	this->hitPoints = givenObj.hitPoints;
+	this->energyPoints = givenObj.energyPoints;
+	this->attackDamage = givenObj.attackDamage;	
+}
 
 ScavTrap::ScavTrap(std::string givenName) : ClapTrap(givenName)
 {

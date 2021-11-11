@@ -6,13 +6,13 @@
 #    By: iltafah <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/25 13:10:46 by iltafah           #+#    #+#              #
-#    Updated: 2021/11/09 19:07:18 by iltafah          ###   ########.fr        #
+#    Updated: 2021/11/11 08:03:31 by iltafah          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fragtrap
+NAME = diamondtrap
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -Wshadow
 
 SRC = main.cpp \
 ClapTrap.cpp \

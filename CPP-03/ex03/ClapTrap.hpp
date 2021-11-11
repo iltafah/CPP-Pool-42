@@ -6,7 +6,7 @@
 /*   By: iltafah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 18:13:49 by iltafah           #+#    #+#             */
-/*   Updated: 2021/11/09 13:57:52 by iltafah          ###   ########.fr       */
+/*   Updated: 2021/11/11 17:14:54 by iltafah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ class ClapTrap
 		int			attackDamage;
 	
 	public:
+		ClapTrap();
+		ClapTrap(const ClapTrap &givenObj);
+		void	operator = (const ClapTrap &givenObj);
 		ClapTrap(std::string givenName);
 		~ClapTrap();
 		virtual void	attack(std::string const& target);

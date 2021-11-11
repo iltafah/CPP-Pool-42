@@ -6,7 +6,7 @@
 /*   By: iltafah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 13:52:37 by iltafah           #+#    #+#             */
-/*   Updated: 2021/11/09 14:11:45 by iltafah          ###   ########.fr       */
+/*   Updated: 2021/11/11 17:24:23 by iltafah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 class FragTrap : public ClapTrap
 {
 	public:
+		FragTrap();
+		FragTrap(const FragTrap& givenObj);
+		void	operator=(const FragTrap& givenObj);
 		FragTrap(std::string givenName);
 		~FragTrap();
 		void highFivesGuys(void);

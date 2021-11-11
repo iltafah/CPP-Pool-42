@@ -6,11 +6,39 @@
 /*   By: iltafah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 18:13:35 by iltafah           #+#    #+#             */
-/*   Updated: 2021/11/09 08:39:12 by iltafah          ###   ########.fr       */
+/*   Updated: 2021/11/11 17:10:10 by iltafah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./ClapTrap.hpp"
+
+ClapTrap::ClapTrap()
+{
+	std::cout << "ClapTrap default constructor has been called" << std::endl;
+	name = "NoName";
+	hitPoints = 10;
+	energyPoints = 10;
+	attackDamage = 0;
+}
+
+ClapTrap::ClapTrap(const ClapTrap &givenObj)
+{
+	std::cout << "ClapTrap copy constructor has been called" << std::endl;
+	this->name = givenObj.name;
+	this->hitPoints = givenObj.hitPoints;
+	this->energyPoints = givenObj.energyPoints;
+	this->attackDamage = givenObj.attackDamage;
+}
+
+void	ClapTrap::operator=(const ClapTrap &givenObj)
+{
+	std::cout << "ClapTrap Copy assignment operator has been called" << std::endl;
+	this->name = givenObj.name;
+	this->hitPoints = givenObj.hitPoints;
+	this->energyPoints = givenObj.energyPoints;
+	this->attackDamage = givenObj.attackDamage;
+	return ;
+}
 
 ClapTrap::ClapTrap(std::string givenName)
 {
