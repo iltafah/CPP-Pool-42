@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iltafah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/25 14:34:53 by iltafah           #+#    #+#             */
-/*   Updated: 2021/11/12 10:19:51 by iltafah          ###   ########.fr       */
+/*   Created: 2021/11/13 14:37:46 by iltafah           #+#    #+#             */
+/*   Updated: 2021/11/13 17:14:07 by iltafah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
-# include "./Contact.hpp"
+# include "./Animal.hpp"
+# include "./Brain.hpp"
 
-# define CONTACTS_SIZE 8
-
-class PhoneBook
+class Cat : public Animal
 {
 	private:
-		Contact	contacts[CONTACTS_SIZE];
-		int		curr_contact_index;
-		int		filled_size;
+		Brain* brain;
 
 	public:
-		PhoneBook();
-		void	executeCommand(std::string command);
+		Cat();
+		Cat(const Cat& givenObj);
+		~Cat();
+		void operator = (const Cat& giveObj);
+		void makeSound() const;
 };
 
 #endif

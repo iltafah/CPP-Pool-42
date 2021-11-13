@@ -6,11 +6,25 @@
 /*   By: iltafah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 19:09:01 by iltafah           #+#    #+#             */
-/*   Updated: 2021/10/29 16:51:56 by iltafah          ###   ########.fr       */
+/*   Updated: 2021/11/11 18:05:06 by iltafah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./Contact.hpp"
+
+/*
+** ************************************************************************** **
+								Default Constractor								
+** ************************************************************************** **
+*/
+
+Contact::Contact(void) : max_string_member_length(0) {}
+
+/*
+** ************************************************************************** **
+									Setters									
+** ************************************************************************** **
+*/
 
 void	Contact::setFirstName(std::string first_name)
 {
@@ -49,6 +63,12 @@ void	Contact::setMaxStringLength(size_t newLength)
 	return ;
 }
 
+/*
+** ************************************************************************** **
+									Getters									
+** ************************************************************************** **
+*/
+
 std::string	Contact::getFirstName(void) const
 {
 	return (this->first_name);
@@ -78,5 +98,3 @@ size_t	Contact::getMaxStringLength(void) const
 {
 	return (this->max_string_member_length);
 }
-
-Contact::Contact(void) : max_string_member_length(0) {}

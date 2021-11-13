@@ -6,7 +6,7 @@
 /*   By: iltafah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 14:34:20 by iltafah           #+#    #+#             */
-/*   Updated: 2021/11/03 19:08:12 by iltafah          ###   ########.fr       */
+/*   Updated: 2021/11/12 10:07:18 by iltafah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ void	printFullContactData(Contact givenContact)
 {
 	int	totalLen;
 	int	maxDataLen;
-	int	printedLen;
+	int	toBePrintedLen;
 	int	maxIndicLen;
 	int	spacesNum;
 	std::string	indicators[5] = {
@@ -132,14 +132,14 @@ void	printFullContactData(Contact givenContact)
 	maxIndicLen = indicators[4].length();
 	maxDataLen = givenContact.getMaxStringLength();
 	totalLen = maxDataLen + maxIndicLen;
-	std::cout << std::string(givenContact.getMaxStringLength() + maxIndicLen, '.') << std::endl;
+	std::cout << std::string(maxDataLen + maxIndicLen, '.') << std::endl;
 	for (int i = 0; i < 5; i++)
 	{
-		printedLen = contactData[i].length() + indicators[i].length();
-		spacesNum = totalLen - printedLen;
+		toBePrintedLen = contactData[i].length() + indicators[i].length();
+		spacesNum = totalLen - toBePrintedLen;
 		std::cout << indicators[i] << contactData[i] << std::setw(spacesNum) << '.' << std::endl;
 	}
-	std::cout << std::string(givenContact.getMaxStringLength() + maxIndicLen, '.') << std::endl;
+	std::cout << std::string(maxDataLen + maxIndicLen, '.') << std::endl;
 }
 
 void	searchForContact(Contact contacts[CONTACTS_SIZE], int filled_size)
@@ -198,7 +198,7 @@ void	PhoneBook::executeCommand(std::string command)
 
 /*
 ** ************************************************************************** **
-							PhoneBook::PhoneBook																		
+							PhoneBook::PhoneBook()																		
 ** ************************************************************************** **
 */
 

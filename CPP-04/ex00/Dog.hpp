@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iltafah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/25 14:34:53 by iltafah           #+#    #+#             */
-/*   Updated: 2021/11/12 10:19:51 by iltafah          ###   ########.fr       */
+/*   Created: 2021/11/13 14:25:33 by iltafah           #+#    #+#             */
+/*   Updated: 2021/11/13 16:26:24 by iltafah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
-# include "./Contact.hpp"
+# include "./Animal.hpp"
 
-# define CONTACTS_SIZE 8
-
-class PhoneBook
+class Dog : public Animal
 {
-	private:
-		Contact	contacts[CONTACTS_SIZE];
-		int		curr_contact_index;
-		int		filled_size;
-
 	public:
-		PhoneBook();
-		void	executeCommand(std::string command);
+		Dog();
+		Dog(const Dog& givenObj);
+		~Dog();
+		void operator = (const Dog& giveObj);
+		void makeSound() const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: iltafah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 12:36:24 by iltafah           #+#    #+#             */
-/*   Updated: 2021/10/25 13:07:13 by iltafah          ###   ########.fr       */
+/*   Updated: 2021/11/12 09:33:46 by iltafah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	print_given_args_uppercased(char **args, int size)
 	while (i < size)
 		print_string_uppercased(args[i++]);
 	std::cout << "\n";
-	return ;	
+	return ;
 }
 
 int	main(int argc, char **argv)

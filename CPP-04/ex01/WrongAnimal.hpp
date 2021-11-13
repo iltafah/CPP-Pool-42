@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iltafah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/25 14:34:53 by iltafah           #+#    #+#             */
-/*   Updated: 2021/11/12 10:19:51 by iltafah          ###   ########.fr       */
+/*   Created: 2021/11/13 15:23:46 by iltafah           #+#    #+#             */
+/*   Updated: 2021/11/13 16:30:47 by iltafah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
-# include "./Contact.hpp"
+# include <iostream>
 
-# define CONTACTS_SIZE 8
-
-class PhoneBook
+class WrongAnimal
 {
-	private:
-		Contact	contacts[CONTACTS_SIZE];
-		int		curr_contact_index;
-		int		filled_size;
+	protected:
+		std::string type;
 
 	public:
-		PhoneBook();
-		void	executeCommand(std::string command);
+		WrongAnimal();
+		WrongAnimal(const WrongAnimal& giveObj);
+		~WrongAnimal();
+		void operator = (const WrongAnimal& giveObj);
+		void makeSound() const;
+		std::string	getType() const;
 };
 
 #endif

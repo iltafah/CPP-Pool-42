@@ -5,30 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: iltafah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 08:30:50 by iltafah           #+#    #+#             */
-/*   Updated: 2021/11/13 18:04:45 by iltafah          ###   ########.fr       */
+/*   Created: 2021/11/13 12:23:59 by iltafah           #+#    #+#             */
+/*   Updated: 2021/11/13 17:19:27 by iltafah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "./Animal.hpp"
+#include "./Dog.hpp"
+#include "./Cat.hpp"
+#include "./WrongAnimal.hpp"
+#include "./WrongCat.hpp"
+#include "./Brain.hpp"
 
-int		main()
-{
-	std::string	message("HI THIS IS BRAIN");
+int main() {
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
 
-	//Declare string PTR && REF
-	std::string	*stringPTR = &message;
-	std::string	&stringREF = message;
-
-	//Display addresses of message string
-	std::cout << (void*)&message << std::endl;
-	std::cout << (void*)stringPTR << std::endl;
-	std::cout << (void*)&stringREF << std::endl;
-
-	//Display strings
-	std::cout << message << std::endl;
-	std::cout << *stringPTR << std::endl;
-	std::cout << stringREF << std::endl;
-
+	delete j;//should not create a leak
+    delete i;
 	return (0);
 }

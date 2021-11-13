@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iltafah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/25 14:34:53 by iltafah           #+#    #+#             */
-/*   Updated: 2021/11/12 10:19:51 by iltafah          ###   ########.fr       */
+/*   Created: 2021/11/13 16:36:40 by iltafah           #+#    #+#             */
+/*   Updated: 2021/11/13 16:57:50 by iltafah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-# include "./Contact.hpp"
+#include <iostream>
 
-# define CONTACTS_SIZE 8
-
-class PhoneBook
+class Brain
 {
 	private:
-		Contact	contacts[CONTACTS_SIZE];
-		int		curr_contact_index;
-		int		filled_size;
+		std::string ideas[100];
 
 	public:
-		PhoneBook();
-		void	executeCommand(std::string command);
+		Brain();
+		Brain(const Brain& givenObj);
+		~Brain();
+		void	operator = (const Brain& givenObj);
 };
+
 
 #endif
