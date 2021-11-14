@@ -6,7 +6,7 @@
 /*   By: iltafah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 08:45:04 by iltafah           #+#    #+#             */
-/*   Updated: 2021/11/02 17:15:48 by iltafah          ###   ########.fr       */
+/*   Updated: 2021/11/14 15:38:20 by iltafah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class HumanB
 		std::string name;
 	
 	public:
-		HumanB(std::string givenName) : name(givenName) {};
+		HumanB(std::string givenName);
 		~HumanB();
 		void	setWeapon(Weapon &givenWeapon);
 		void	attack();

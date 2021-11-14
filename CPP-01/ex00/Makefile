@@ -6,13 +6,13 @@
 #    By: iltafah <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/25 13:10:46 by iltafah           #+#    #+#              #
-#    Updated: 2021/11/01 11:10:28 by iltafah          ###   ########.fr        #
+#    Updated: 2021/11/14 14:36:27 by iltafah          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = zombie
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = main.cpp \
 Zombie.cpp \
@@ -26,7 +26,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	clang++ $(FLAGS) -o $(NAME) $^
 
-%.o: %.c
+%.o: %.cpp
 	clang++ -c $< -o $@
 
 clean:

@@ -6,7 +6,7 @@
 /*   By: iltafah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 14:37:39 by iltafah           #+#    #+#             */
-/*   Updated: 2021/11/13 17:17:23 by iltafah          ###   ########.fr       */
+/*   Updated: 2021/11/14 11:11:51 by iltafah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@ Cat::Cat(const Cat& givenObj)
 {
 	std::cout << "Cat Copy constructor has been called" << std::endl;
 	this->type = givenObj.type;
+	delete this->brain;
+	if (givenObj.brain != NULL)
+	{
+		this->brain = new Brain();
+		*(this->brain) = *(givenObj.brain);
+	}
 }
 
 Cat::~Cat()

@@ -6,7 +6,7 @@
 /*   By: iltafah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 14:37:46 by iltafah           #+#    #+#             */
-/*   Updated: 2021/11/13 17:14:07 by iltafah          ###   ########.fr       */
+/*   Updated: 2021/11/14 09:12:27 by iltafah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Cat : public Animal
 		Cat();
 		Cat(const Cat& givenObj);
 		~Cat();
-		void operator = (const Cat& giveObj);
+		void operator = (const Cat& givenObj);
 		void makeSound() const;
 };
 

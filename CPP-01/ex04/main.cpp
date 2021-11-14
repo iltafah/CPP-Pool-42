@@ -6,7 +6,7 @@
 /*   By: iltafah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 18:03:57 by iltafah           #+#    #+#             */
-/*   Updated: 2021/11/03 15:10:47 by iltafah          ###   ########.fr       */
+/*   Updated: 2021/11/14 17:21:44 by iltafah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,12 @@ void	replaceOccurrences(std::string &currLine, char* toReplace, char* replaceWit
 {
 	int			index;
 
-	while ((index = currLine.find(toReplace)) != currLine.npos)
+	index = 0;
+	while ((index = currLine.find(toReplace, index)) != currLine.npos)
 	{
 		currLine.erase(index, strlen(toReplace));
 		currLine.insert(index, replaceWith);
+		index += strlen(replaceWith);
 	}
 }
 
@@ -73,6 +75,8 @@ int		main(int argc, char** argv)
 		if (createOutputFile(outputFile, "FILENAME.replace") == ERROR)
 			return (0);
 		replaceAndWrite(inputFile, outputFile, argv[2], argv[3]);
+		outputFile.close();
+		inputFile.close();
 	}
 	return (0);
 }

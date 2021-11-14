@@ -6,13 +6,13 @@
 #    By: iltafah <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/25 13:10:46 by iltafah           #+#    #+#              #
-#    Updated: 2021/11/02 14:44:19 by iltafah          ###   ########.fr        #
+#    Updated: 2021/11/14 18:52:48 by iltafah          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = brain
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = main.cpp \
 Weapon.cpp \
@@ -26,7 +26,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	clang++ $(FLAGS) -o $(NAME) $^
 
-%.o: %.c
+%.o: %.cpp
 	clang++ -c $< -o $@
 
 clean:

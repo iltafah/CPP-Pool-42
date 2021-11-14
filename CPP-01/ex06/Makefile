@@ -6,13 +6,13 @@
 #    By: iltafah <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/25 13:10:46 by iltafah           #+#    #+#              #
-#    Updated: 2021/11/03 19:09:29 by iltafah          ###   ########.fr        #
+#    Updated: 2021/11/14 18:53:42 by iltafah          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = karenFilter
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = main.cpp \
 karen.cpp

@@ -6,13 +6,13 @@
 #    By: iltafah <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/25 13:10:46 by iltafah           #+#    #+#              #
-#    Updated: 2021/11/03 15:12:32 by iltafah          ###   ########.fr        #
+#    Updated: 2021/11/14 18:52:51 by iltafah          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = replace
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = main.cpp
 
@@ -23,7 +23,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	clang++ $(FLAGS) -o $(NAME) $^
 
-%.o: %.c
+%.o: %.cpp
 	clang++ -c $< -o $@
 
 clean:

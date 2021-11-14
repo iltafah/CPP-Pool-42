@@ -6,7 +6,7 @@
 /*   By: iltafah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 14:26:39 by iltafah           #+#    #+#             */
-/*   Updated: 2021/11/13 17:17:12 by iltafah          ###   ########.fr       */
+/*   Updated: 2021/11/14 09:19:24 by iltafah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,22 @@ Dog::Dog()
 	this->brain = new Brain();
 }
 
-Dog::Dog(const Dog& giveObj)
+Dog::Dog(const Dog& givenObj)
 {
 	std::cout << "Dog Copy Constractor has been called" << std::endl;
-	this->type = giveObj.type;
+	this->type = givenObj.type;
 }
 
 Dog::~Dog()
 {
-	std::cout << "Dog deconstractor has been called" << std::endl;
+	std::cout << "Dog Deconstractor has been called" << std::endl;
 	delete this->brain;
 }
 
-void	Dog::operator=(const Dog& giveObj)
+void	Dog::operator=(const Dog& givenObj)
 {
 	std::cout << "Dog Copy assignment operator has been called" << std::endl;
-	this->type = giveObj.type;
+	this->type = givenObj.type;
 }
 
 void	Dog::makeSound(void) const

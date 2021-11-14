@@ -6,7 +6,7 @@
 /*   By: iltafah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 08:30:50 by iltafah           #+#    #+#             */
-/*   Updated: 2021/11/13 18:04:45 by iltafah          ###   ########.fr       */
+/*   Updated: 2021/11/14 14:26:07 by iltafah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int		main()
 	std::string	&stringREF = message;
 
 	//Display addresses of message string
-	std::cout << (void*)&message << std::endl;
-	std::cout << (void*)stringPTR << std::endl;
-	std::cout << (void*)&stringREF << std::endl;
+	std::cout << &message << std::endl;
+	std::cout << stringPTR << std::endl;
+	std::cout << &stringREF << std::endl;
 
 	//Display strings
 	std::cout << message << std::endl;

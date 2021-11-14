@@ -6,7 +6,7 @@
 /*   By: iltafah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 12:46:23 by iltafah           #+#    #+#             */
-/*   Updated: 2021/11/13 16:19:33 by iltafah          ###   ########.fr       */
+/*   Updated: 2021/11/14 10:32:49 by iltafah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Animal
 	public:
 		Animal();
 		Animal(const Animal& givenObj);
-		~Animal();
+		virtual ~Animal();
 		void operator = (const Animal& givenObj);
 		virtual void makeSound() const;
 		std::string	getType() const;

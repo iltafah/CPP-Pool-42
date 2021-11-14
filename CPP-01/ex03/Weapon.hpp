@@ -6,7 +6,7 @@
 /*   By: iltafah <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 08:44:16 by iltafah           #+#    #+#             */
-/*   Updated: 2021/11/02 17:16:07 by iltafah          ###   ########.fr       */
+/*   Updated: 2021/11/14 15:39:02 by iltafah          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 # define WEAPON_HPP
 
 #include <iostream>
+
+# define RED "\033[1;31m"
+# define GREEN "\033[1;32m"
+# define RESET "\033[0m"
+
 
 class Weapon
 {
